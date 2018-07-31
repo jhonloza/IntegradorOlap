@@ -28,25 +28,25 @@ import accesodatos.*;
  *
  * @author jhonloza
  */
-public class FormLambito {
+public class FormLmodalidad {
 
-    private TableView<Ambitos> tblAmbitos;
+    private TableView<Modalidad> tblAmbitos;
     private Label titulo;
-    private TableColumn<Ambitos, Integer> colcodigos;
-    private TableColumn<Ambitos, String> colnombres;
-    private TableColumn<Ambitos, String> colobservacion;
-    private TableColumn<Ambitos, Integer> colestado;
+    private TableColumn<Modalidad, Integer> colcodigos;
+    private TableColumn<Modalidad, String> colnombres;
+    private TableColumn<Modalidad, String> colobservacion;
+    private TableColumn<Modalidad, Integer> colestado;
     private VBox pPrincipal;
     private ScrollPane listado;
 
-    public FormLambito() {
-        titulo = new Label("LISTADO DE AMBITOS");
+    public FormLmodalidad() {
+        titulo = new Label("LISTADO DE MODALIDADES");
         titulo.setPadding(new Insets(10));
         titulo.setFont(Font.font("Arial Black", 20));
         tblAmbitos=new TableView<>();
         colcodigos = new TableColumn<>("codigo");
         colnombres = new TableColumn<>("nombre");
-        colobservacion = new TableColumn<>("observacion");
+        colobservacion = new TableColumn<>("descripcion");
         colobservacion.setMaxWidth(200);
         colobservacion.setMinWidth(100);
         colestado = new TableColumn<>("estado");
@@ -66,9 +66,9 @@ public class FormLambito {
     }
 
     public void cargarDatos() {
-        List<Ambitos> listAmbitos = new ArrayList<>();
+        List<Modalidad> listAmbitos = new ArrayList<>();
         try {
-            listAmbitos = AmbitoImpl.ObtenerAmbitos();
+            listAmbitos = ModalidadTutoriaImpl.ObtenerModalidad();
             colcodigos.setCellValueFactory(new PropertyValueFactory<>("codigo"));
             colnombres.setCellValueFactory(new PropertyValueFactory<>("nombre"));
             colobservacion.setCellValueFactory(new PropertyValueFactory<>("observacion"));

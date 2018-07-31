@@ -131,7 +131,7 @@ public class FormEmodalidad {
                 Modalidad ambito=null;
                 try {
                     ambito=new Modalidad();
-                    ambito.setCodigo(0);
+                    ambito.setCodigo(Integer.parseInt(tcodigo.getText()));
                     ambito.setNombre(tnombre.getText());
                     ambito.setDescripcion(tobservacion.getText());
                     ambito.setEstado(Integer.parseInt(testado.getText()));

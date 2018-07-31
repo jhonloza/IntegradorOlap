@@ -163,7 +163,7 @@ public class FormAestudiante {
                 Estudiante ambito = null;
                 try {
                     ambito = new Estudiante();
-                    ambito.setCodigo(0);
+                    ambito.setCodigo(Integer.parseInt(tcodigo.getText()));
                     ambito.setNombre(tnombre.getText());
                     ambito.setApellido(tapellido.getText());
                     ambito.setCodigo_sicoa(Integer.parseInt(tcodsicoa.getText()));

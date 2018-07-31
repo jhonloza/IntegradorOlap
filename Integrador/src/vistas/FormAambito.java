@@ -129,7 +129,7 @@ public class FormAambito {
                 Ambitos ambito=null;
                 try {
                     ambito=new Ambitos();
-                    ambito.setCodigo(0);
+                    ambito.setCodigo(Integer.parseInt(tcodigo.getText()));
                     ambito.setNombre(tnombre.getText());
                     ambito.setObservacion(tobservacion.getText());
                     ambito.setEstado(Integer.parseInt(testado.getText()));

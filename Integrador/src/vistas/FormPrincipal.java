@@ -18,6 +18,9 @@ import javafx.scene.image.*;
 import rnegocio.entidad.*;
 import rnegocio.impl.*;
 import accesodatos.*;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
 
 public class FormPrincipal extends Application {
 
@@ -164,6 +167,14 @@ public class FormPrincipal extends Application {
             }
         });
         smEstListado = new MenuItem("Estudiante Listado");
+        smEstListado.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Pane estList = new Pane();
+                estList.getChildren().add(lEstudiante(event));
+                escritorio.getChildren().add(estList);
+            }
+        });
         smFacNuevo = new MenuItem("Facultad Nuevo");
         smFacActualizar = new MenuItem("Facultad Actualizar");
         smFacEliminar = new MenuItem("Facultad Eliminar");
@@ -266,6 +277,14 @@ public class FormPrincipal extends Application {
             }
         });
         smModListado = new MenuItem("Modalidad Listado");
+        smModListado.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Pane modalidadList = new Pane();
+                modalidadList.getChildren().add(lModalidad(event));
+                escritorio.getChildren().add(modalidadList);
+            }
+        });
         smManualMostrar = new MenuItem("Mostrar Manual");
         //submenus
         mInicio.getItems().addAll(smIniciarSesion, smSalir);
@@ -277,6 +296,17 @@ public class FormPrincipal extends Application {
         mAmbitos.getItems().addAll(smAmbNuevo, smAmbActualizar, smAmbEliminar, new SeparatorMenuItem(), smAmbMostrarCodigo, smAmbListado);
         mModalidades.getItems().addAll(smModNuevo, smModActualizar, smModEliminar, new SeparatorMenuItem(), smModMostrarCodigo, smModListado);
         mManual.getItems().addAll(smManualMostrar);
+        mManual.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+     File path = new File ("src/recursos/MANUAL DE USUARIO.pdf");
+     Desktop.getDesktop().open(path);
+}catch (IOException ex) {
+     ex.printStackTrace();
+}
+            }
+        });
         //ingreso de items menu
         menuPrincipal.getMenus().addAll(mInicio, mEstudiante, mFacultades, mEscuelas, mPeriodos, mNiveles, mAmbitos, mModalidades, mManual);
         superior.getChildren().addAll(visorInicio, menuPrincipal);
@@ -530,30 +560,30 @@ public class FormPrincipal extends Application {
         nuevo.setCloseButton(cerrar);
         return nuevo;
     }
-//    public VentanaInterna lModalidad(ActionEvent event) {
-//        BorderPane AmbN = new BorderPane();
-//        Label titulo = new Label("LISTADO AMBITO");
-//        titulo.setFont(Font.font("Berlin Sans FB Demi", 20));
-//        titulo.setTextFill(Color.BLACK);
-//        Button cerrar = new Button("X");
-//        cerrar.setFont(Font.font("Arial Black", 18));
-//        cerrar.setTextFill(Color.CYAN);
-//        //Barra de Titulo subVentana
-//        BarraDeTitulo bTitulo = new BarraDeTitulo(titulo, cerrar);
-//        AmbN.setTop(bTitulo.getBarra());
-//        //Interior de la subVentana
-//        FormLambito NAmb = new FormLambito();
-//        AmbN.setCenter(NAmb.getPPrincipal());
-//        //Creacion de Ventana interna
-//        VentanaInterna nuevo = new VentanaInterna();
-//        nuevo.setRoot(AmbN);
-//        nuevo.makeDragable(bTitulo.getBarra());
-//        nuevo.makeDragable(titulo);
-//        nuevo.makeResizable(20);
-//        nuevo.makeFocusable();
-//        nuevo.setCloseButton(cerrar);
-//        return nuevo;
-//    }
+    public VentanaInterna lModalidad(ActionEvent event) {
+        BorderPane AmbN = new BorderPane();
+        Label titulo = new Label("LISTADO AMBITO");
+        titulo.setFont(Font.font("Berlin Sans FB Demi", 20));
+        titulo.setTextFill(Color.BLACK);
+        Button cerrar = new Button("X");
+        cerrar.setFont(Font.font("Arial Black", 18));
+        cerrar.setTextFill(Color.CYAN);
+        //Barra de Titulo subVentana
+        BarraDeTitulo bTitulo = new BarraDeTitulo(titulo, cerrar);
+        AmbN.setTop(bTitulo.getBarra());
+        //Interior de la subVentana
+        FormLmodalidad NAmb = new FormLmodalidad();
+        AmbN.setCenter(NAmb.getPPrincipal());
+        //Creacion de Ventana interna
+        VentanaInterna nuevo = new VentanaInterna();
+        nuevo.setRoot(AmbN);
+        nuevo.makeDragable(bTitulo.getBarra());
+        nuevo.makeDragable(titulo);
+        nuevo.makeResizable(20);
+        nuevo.makeFocusable();
+        nuevo.setCloseButton(cerrar);
+        return nuevo;
+    }
     public VentanaInterna nEstudiante(ActionEvent event) {
         BorderPane AmbN = new BorderPane();
         Label titulo = new Label("NUEVA MODALIDAD");
@@ -653,30 +683,30 @@ public class FormPrincipal extends Application {
         nuevo.setCloseButton(cerrar);
         return nuevo;
     }
-//    public VentanaInterna lEstudiante(ActionEvent event) {
-//        BorderPane AmbN = new BorderPane();
-//        Label titulo = new Label("LISTADO AMBITO");
-//        titulo.setFont(Font.font("Berlin Sans FB Demi", 20));
-//        titulo.setTextFill(Color.BLACK);
-//        Button cerrar = new Button("X");
-//        cerrar.setFont(Font.font("Arial Black", 18));
-//        cerrar.setTextFill(Color.CYAN);
-//        //Barra de Titulo subVentana
-//        BarraDeTitulo bTitulo = new BarraDeTitulo(titulo, cerrar);
-//        AmbN.setTop(bTitulo.getBarra());
-//        //Interior de la subVentana
-//        FormLambito NAmb = new FormLambito();
-//        AmbN.setCenter(NAmb.getPPrincipal());
-//        //Creacion de Ventana interna
-//        VentanaInterna nuevo = new VentanaInterna();
-//        nuevo.setRoot(AmbN);
-//        nuevo.makeDragable(bTitulo.getBarra());
-//        nuevo.makeDragable(titulo);
-//        nuevo.makeResizable(20);
-//        nuevo.makeFocusable();
-//        nuevo.setCloseButton(cerrar);
-//        return nuevo;
-//    }
+    public VentanaInterna lEstudiante(ActionEvent event) {
+        BorderPane AmbN = new BorderPane();
+        Label titulo = new Label("LISTADO AMBITO");
+        titulo.setFont(Font.font("Berlin Sans FB Demi", 20));
+        titulo.setTextFill(Color.BLACK);
+        Button cerrar = new Button("X");
+        cerrar.setFont(Font.font("Arial Black", 18));
+        cerrar.setTextFill(Color.CYAN);
+        //Barra de Titulo subVentana
+        BarraDeTitulo bTitulo = new BarraDeTitulo(titulo, cerrar);
+        AmbN.setTop(bTitulo.getBarra());
+        //Interior de la subVentana
+        FormLestudiantes NAmb = new FormLestudiantes();
+        AmbN.setCenter(NAmb.getPPrincipal());
+        //Creacion de Ventana interna
+        VentanaInterna nuevo = new VentanaInterna();
+        nuevo.setRoot(AmbN);
+        nuevo.makeDragable(bTitulo.getBarra());
+        nuevo.makeDragable(titulo);
+        nuevo.makeResizable(20);
+        nuevo.makeFocusable();
+        nuevo.setCloseButton(cerrar);
+        return nuevo;
+    }
 
     public void salirEventHandler(ActionEvent event) {
         System.exit(0);
