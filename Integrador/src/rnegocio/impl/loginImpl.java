@@ -6,7 +6,6 @@
 package rnegocio.impl;
 import rnegocio.entidad.*;
 import accesodatos.*;
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
 import java.sql.*;
 import java.util.ArrayList;
 import java.io.Serializable;
