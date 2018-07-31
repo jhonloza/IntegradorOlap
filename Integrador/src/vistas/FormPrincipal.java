@@ -36,6 +36,7 @@ public class FormPrincipal extends Application {
     public HBox inferior;
     public BorderPane vPrincipal;
 
+    
     //items menu
     public MenuBar menuPrincipal;
     public Menu mInicio;
@@ -91,6 +92,8 @@ public class FormPrincipal extends Application {
     @Override
     public void start(Stage primaryStage) {
         //Inicializar items
+        
+        
         imagenPrincipal = new Image("file:src/recursos/siget-011.jpg", 1280, 240, true, true);
         visorInicio = new ImageView(imagenPrincipal);
         imagenSecundaria = new Image("file:src/recursos/siget-031.jpg", 1280, 120, true, true);
@@ -106,13 +109,13 @@ public class FormPrincipal extends Application {
         mAmbitos = new Menu("Ambitos");
         mModalidades = new Menu("Modalidades");
         mManual = new Menu("manual de Usuario");
-        mEstudiante.setDisable(false);
+        mEstudiante.setDisable(true);
         mFacultades.setDisable(true);
         mEscuelas.setDisable(true);
         mPeriodos.setDisable(true);
         mNiveles.setDisable(true);
-        mAmbitos.setDisable(false);
-        mModalidades.setDisable(false);
+        mAmbitos.setDisable(true);
+        mModalidades.setDisable(true);
         superior = new VBox();
         escritorio = new Pane();
         //Ingreso de subitems a los menus
@@ -332,7 +335,7 @@ public class FormPrincipal extends Application {
     }
 
     public void sesion(ActionEvent event) {
-        FormLogin loginNuevo=new FormLogin();
+        FormLogin loginNuevo=new FormLogin(menuPrincipal);
         
     }
 
