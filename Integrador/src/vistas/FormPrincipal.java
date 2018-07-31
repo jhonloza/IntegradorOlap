@@ -300,7 +300,7 @@ public class FormPrincipal extends Application {
             @Override
             public void handle(ActionEvent event) {
                 try {
-     File path = new File ("src/recursos/MANUAL DE USUARIO.pdf");
+     File path = new File ("dist/lib/MANUAL DE USUARIO.pdf");
      Desktop.getDesktop().open(path);
 }catch (IOException ex) {
      ex.printStackTrace();
