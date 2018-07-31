@@ -103,7 +103,7 @@ public class FormEambito {
     m5.setAlignment(Pos.CENTER);
     m6.getChildren().addAll(codigo, tcodigo, bbuscar);
     pPrincipal.getChildren().addAll(m1, m6, m2, m4, m3, m5);
-    pPrincipal.setBackground(new Background(new BackgroundFill(Color.BLUEVIOLET, CornerRadii.EMPTY, Insets.EMPTY)));
+    pPrincipal.setBackground(new Background(new BackgroundFill(Color.CYAN, CornerRadii.EMPTY, Insets.EMPTY)));
     pPrincipal.setMinSize(350, 300);
     bbuscar.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -139,7 +139,7 @@ public class FormEambito {
                         Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
             alerta.setTitle("INFORMACION DEL SISTEMA");
             alerta.setHeaderText(null);
-            alerta.setContentText("Actualizacion Correcta ");
+            alerta.setContentText("Eliminacion Correcta!");
 alerta.showAndWait();
                     }
                 } catch (Exception e) {

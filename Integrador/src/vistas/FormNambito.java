@@ -46,7 +46,7 @@ public class FormNambito {
     private HBox m5;
 
     public FormNambito() {
-        titulo = new Label("Nuevo Ambito");
+        titulo = new Label("NUEVO AMBITO");
         titulo.setPadding(new Insets(10));
         titulo.setFont(Font.font("Arial Black", 20));
         nombre = new Label("Nombre: ");
@@ -90,7 +90,7 @@ public class FormNambito {
         m5.getChildren().addAll(bingresar, bLimpiar);
         m5.setAlignment(Pos.CENTER);
         pPrincipal.getChildren().addAll(m1, m2, m4, m3, m5);
-        pPrincipal.setBackground(new Background(new BackgroundFill(Color.BLUEVIOLET, CornerRadii.EMPTY, Insets.EMPTY)));
+        pPrincipal.setBackground(new Background(new BackgroundFill(Color.CYAN, CornerRadii.EMPTY, Insets.EMPTY)));
         pPrincipal.setMinSize(350, 300);
         bingresar.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -106,7 +106,7 @@ public class FormNambito {
                         Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
                         alerta.setTitle("INFORMACION DEL SISTEMA");
                         alerta.setHeaderText(null);
-                        alerta.setContentText("Actualizacion Correcta ");
+                        alerta.setContentText("Ingreso Correcto!");
                         alerta.showAndWait();
                     }
                 } catch (Exception e) {

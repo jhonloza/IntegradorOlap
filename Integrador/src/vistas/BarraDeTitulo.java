@@ -34,7 +34,7 @@ public class BarraDeTitulo {
         barra = new BorderPane();
         barra.setCenter(nombreVentana);
         barra.setRight(cerrar);
-        barra.setStyle("-fx-border-color: blue; -fx-border-width: 2px; -fx-background-color: aqua ");
+        barra.setStyle("-fx-border-color: blue; -fx-border-width: 2px; -fx-background-color: lightgray  ");
     }
 
     public Node getBarra() {

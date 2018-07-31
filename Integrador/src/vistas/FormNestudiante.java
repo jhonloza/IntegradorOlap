@@ -55,7 +55,7 @@ public class FormNestudiante {
     private HBox m8;
 
     public FormNestudiante() {
-        titulo = new Label("Nuevo Estudiante");
+        titulo = new Label("NUEVO ESTUDIANTE");
         titulo.setPadding(new Insets(10));
         titulo.setFont(Font.font("Arial Black", 20));
         nombre = new Label("Nombre: ");
@@ -120,7 +120,7 @@ public class FormNestudiante {
         m8.getChildren().addAll(bingresar, bLimpiar);
         m8.setAlignment(Pos.CENTER);
         pPrincipal.getChildren().addAll(m1, m2, m3, m4, m5, m6, m7, m8);
-        pPrincipal.setBackground(new Background(new BackgroundFill(Color.BLUEVIOLET, CornerRadii.EMPTY, Insets.EMPTY)));
+        pPrincipal.setBackground(new Background(new BackgroundFill(Color.CYAN, CornerRadii.EMPTY, Insets.EMPTY)));
         pPrincipal.setMinSize(350, 400);
         bingresar.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -138,7 +138,7 @@ public class FormNestudiante {
                         Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
                         alerta.setTitle("INFORMACION DEL SISTEMA");
                         alerta.setHeaderText(null);
-                        alerta.setContentText("Ingreso Correcto ");
+                        alerta.setContentText("Ingreso Correcto!");
                         alerta.showAndWait();
                     }
                 } catch (Exception e) {

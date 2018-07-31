@@ -60,7 +60,7 @@ public class FormAestudiante {
     private HBox m9;
 
     public FormAestudiante() {
-        titulo = new Label("Nuevo Estudiante");
+        titulo = new Label("ACTUALIZAR ESTUDIANTE");
         codigo = new Label("Codigo");
         tcodigo = new TextField();
         bbuscar = new Button("Buscar");
@@ -131,7 +131,7 @@ public class FormAestudiante {
         m9.getChildren().addAll(codigo, tcodigo, bbuscar);
         m9.setAlignment(Pos.CENTER);
         pPrincipal.getChildren().addAll(m9, m1, m2, m3, m4, m5, m6, m7, m8);
-        pPrincipal.setBackground(new Background(new BackgroundFill(Color.BLUEVIOLET, CornerRadii.EMPTY, Insets.EMPTY)));
+        pPrincipal.setBackground(new Background(new BackgroundFill(Color.CYAN, CornerRadii.EMPTY, Insets.EMPTY)));
         pPrincipal.setMinSize(350, 400);
         bbuscar.setOnAction(new EventHandler<ActionEvent>() {
             @Override

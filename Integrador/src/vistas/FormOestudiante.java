@@ -93,9 +93,10 @@ public class FormOestudiante {
         tcodperiodo.setPadding(new Insets(10));
         tcodnivel = new TextField();
         tcodnivel.setPadding(new Insets(10));
-        bingresar = new Button("ingresar");
-        bingresar.setPadding(new Insets(10));
+        bingresar = new Button("Buscar");
         bingresar.setFont(Font.font("Arial Black", 14));
+        bingresar.setPadding(new Insets(10));
+        
         bLimpiar = new Button("Limpiar");
         bLimpiar.setPadding(new Insets(10));
         bLimpiar.setFont(Font.font("Arial Black", 14));
@@ -128,9 +129,9 @@ public class FormOestudiante {
         m9.getChildren().addAll(codigo, tcodigo);
         m9.setAlignment(Pos.CENTER);
         pPrincipal.getChildren().addAll(m9, m1, m2, m3, m4, m5, m6, m7, m8);
-        pPrincipal.setBackground(new Background(new BackgroundFill(Color.BLUEVIOLET, CornerRadii.EMPTY, Insets.EMPTY)));
+        pPrincipal.setBackground(new Background(new BackgroundFill(Color.CYAN, CornerRadii.EMPTY, Insets.EMPTY)));
         pPrincipal.setMinSize(350, 400);
-        bbuscar.setOnAction(new EventHandler<ActionEvent>() {
+        bingresar.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Estudiante ambito = null;
@@ -149,35 +150,7 @@ public class FormOestudiante {
                     Alert alerta = new Alert(Alert.AlertType.ERROR);
                     alerta.setTitle("INFORMACION DEL SISTEMA");
                     alerta.setHeaderText(null);
-                    alerta.setContentText("Error: " + e.getMessage());
-                    alerta.showAndWait();
-                }
-            }
-        });
-        bingresar.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                Estudiante ambito = null;
-                try {
-                    ambito = new Estudiante();
-                    ambito.setCodigo(0);
-                    ambito.setNombre(tnombre.getText());
-                    ambito.setApellido(tapellido.getText());
-                    ambito.setCodigo_sicoa(Integer.parseInt(tcodsicoa.getText()));
-                    ambito.setPeriodo(PeriodoImpl.ObtenerPeriodoDadoCodigo(Integer.parseInt(tcodperiodo.getText())));
-                    ambito.setNivel(NivelImpl.ObtenerNivelDadoCodigo(Integer.parseInt(tcodnivel.getText())));
-                    if (EstudianteImpl.actualizar(ambito)) {
-                        Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
-                        alerta.setTitle("INFORMACION DEL SISTEMA");
-                        alerta.setHeaderText(null);
-                        alerta.setContentText("Actualizacion Correcta ");
-                        alerta.showAndWait();
-                    }
-                } catch (Exception e) {
-                    Alert alerta = new Alert(Alert.AlertType.ERROR);
-                    alerta.setTitle("INFORMACION DEL SISTEMA");
-                    alerta.setHeaderText(null);
-                    alerta.setContentText("Error: " + e.getMessage());
+                    alerta.setContentText("Error al Buscar estudiante: " + e.getMessage());
                     alerta.showAndWait();
                 }
             }
