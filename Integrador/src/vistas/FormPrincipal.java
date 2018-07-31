@@ -541,7 +541,7 @@ public class FormPrincipal extends Application {
 
     public VentanaInterna oModalidad(ActionEvent event) {
         BorderPane AmbN = new BorderPane();
-        Label titulo = new Label("OBTENER AMBITO");
+        Label titulo = new Label("OBTENER MODALIDAD");
         titulo.setFont(Font.font("Berlin Sans FB Demi", 20));
         titulo.setTextFill(Color.BLACK);
         Button cerrar = new Button("X");
@@ -551,7 +551,7 @@ public class FormPrincipal extends Application {
         BarraDeTitulo bTitulo = new BarraDeTitulo(titulo, cerrar);
         AmbN.setTop(bTitulo.getBarra());
         //Interior de la subVentana
-        FormOestudiante NAmb = new FormOestudiante();
+        FormOmodalidad NAmb = new FormOmodalidad();
         AmbN.setCenter(NAmb.getPPrincipal());
         //Creacion de Ventana interna
         VentanaInterna nuevo = new VentanaInterna();
@@ -565,7 +565,7 @@ public class FormPrincipal extends Application {
     }
     public VentanaInterna lModalidad(ActionEvent event) {
         BorderPane AmbN = new BorderPane();
-        Label titulo = new Label("LISTADO AMBITO");
+        Label titulo = new Label("LISTADO MODALIDAD");
         titulo.setFont(Font.font("Berlin Sans FB Demi", 20));
         titulo.setTextFill(Color.BLACK);
         Button cerrar = new Button("X");
@@ -589,7 +589,7 @@ public class FormPrincipal extends Application {
     }
     public VentanaInterna nEstudiante(ActionEvent event) {
         BorderPane AmbN = new BorderPane();
-        Label titulo = new Label("NUEVA MODALIDAD");
+        Label titulo = new Label("NUEVO ESTUDIANTE");
         titulo.setFont(Font.font("Berlin Sans FB Demi", 20));
         titulo.setTextFill(Color.BLACK);
         Button cerrar = new Button("X");
@@ -615,7 +615,7 @@ public class FormPrincipal extends Application {
 
     public VentanaInterna aEstudiante(ActionEvent event) {
         BorderPane AmbN = new BorderPane();
-        Label titulo = new Label("ACTUALIZAR MODALIDAD");
+        Label titulo = new Label("ACTUALIZAR ESTUDIANTE");
         titulo.setFont(Font.font("Berlin Sans FB Demi", 20));
         titulo.setTextFill(Color.BLACK);
         Button cerrar = new Button("X");
@@ -664,7 +664,7 @@ public class FormPrincipal extends Application {
     }
     public VentanaInterna oEstudiante(ActionEvent event) {
         BorderPane AmbN = new BorderPane();
-        Label titulo = new Label("OBTENER AMBITO");
+        Label titulo = new Label("OBTENER ESTUDIANTES");
         titulo.setFont(Font.font("Berlin Sans FB Demi", 20));
         titulo.setTextFill(Color.BLACK);
         Button cerrar = new Button("X");
@@ -688,7 +688,7 @@ public class FormPrincipal extends Application {
     }
     public VentanaInterna lEstudiante(ActionEvent event) {
         BorderPane AmbN = new BorderPane();
-        Label titulo = new Label("LISTADO AMBITO");
+        Label titulo = new Label("LISTADO ESTUDIANTES");
         titulo.setFont(Font.font("Berlin Sans FB Demi", 20));
         titulo.setTextFill(Color.BLACK);
         Button cerrar = new Button("X");

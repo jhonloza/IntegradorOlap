@@ -48,7 +48,7 @@ public class FormOambito {
     private HBox m5;
     private HBox m6;
     public FormOambito(){
-        titulo=new Label("Nuevo Ambito");
+        titulo=new Label("Obtener Ambito");
         titulo.setPadding(new Insets(10));
         titulo.setFont(Font.font("Arial Black", 20));
         codigo=new Label("codigo");

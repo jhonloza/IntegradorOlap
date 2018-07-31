@@ -131,9 +131,11 @@ public class FormNestudiante {
                     ambito.setCodigo(0);
                     ambito.setNombre(tnombre.getText());
                     ambito.setApellido(tapellido.getText());
+                    ambito.setCedula(tcedula.getText());
                     ambito.setCodigo_sicoa(Integer.parseInt(tcodsicoa.getText()));
                     ambito.setPeriodo(PeriodoImpl.ObtenerPeriodoDadoCodigo(Integer.parseInt(tcodperiodo.getText())));
                     ambito.setNivel(NivelImpl.ObtenerNivelDadoCodigo(Integer.parseInt(tcodnivel.getText())));
+                    System.out.println("Estudiante: "+ambito.getNombre()+"  "+ambito.getApellido()+"  "+ambito.getCedula()+"  "+ambito.getPeriodo().getNombre()+"  "+ambito.getNivel().getNombre()+"  "+ambito.getNivel()+"  ");
                     if (EstudianteImpl.Insertar(ambito)) {
                         Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
                         alerta.setTitle("INFORMACION DEL SISTEMA");

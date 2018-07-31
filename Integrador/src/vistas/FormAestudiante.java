@@ -62,8 +62,12 @@ public class FormAestudiante {
     public FormAestudiante() {
         titulo = new Label("ACTUALIZAR ESTUDIANTE");
         codigo = new Label("Codigo");
+        codigo.setPadding(new Insets(10));
+        codigo.setFont(Font.font("Arial Black", 20));
         tcodigo = new TextField();
         bbuscar = new Button("Buscar");
+        bbuscar.setPadding(new Insets(10));
+        bbuscar.setFont(Font.font("Arial Black", 20));
         titulo.setPadding(new Insets(10));
         titulo.setFont(Font.font("Arial Black", 20));
         nombre = new Label("Nombre: ");

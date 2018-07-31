@@ -57,10 +57,12 @@ public class FormOestudiante {
     private HBox m8;
     private HBox m9;
     public FormOestudiante(){
-        titulo = new Label("Nuevo Estudiante");
+        titulo = new Label("Obtener Estudiante");
         codigo = new Label("Codigo");
+        codigo.setPadding(new Insets(10));
+        codigo.setFont(Font.font("Arial Black", 20));
         tcodigo = new TextField();
-        bbuscar = new Button("Buscar");
+        
         titulo.setPadding(new Insets(10));
         titulo.setFont(Font.font("Arial Black", 20));
         nombre = new Label("Nombre: ");
@@ -96,7 +98,6 @@ public class FormOestudiante {
         bingresar = new Button("Buscar");
         bingresar.setFont(Font.font("Arial Black", 14));
         bingresar.setPadding(new Insets(10));
-        
         bLimpiar = new Button("Limpiar");
         bLimpiar.setPadding(new Insets(10));
         bLimpiar.setFont(Font.font("Arial Black", 14));
@@ -124,7 +125,7 @@ public class FormOestudiante {
         m6.setAlignment(Pos.CENTER);
         m7.getChildren().addAll(codnivel, tcodnivel);
         m7.setAlignment(Pos.CENTER);
-        m8.getChildren().addAll(bbuscar, bLimpiar);
+        m8.getChildren().addAll(bingresar, bLimpiar);
         m8.setAlignment(Pos.CENTER);
         m9.getChildren().addAll(codigo, tcodigo);
         m9.setAlignment(Pos.CENTER);
@@ -136,8 +137,9 @@ public class FormOestudiante {
             public void handle(ActionEvent event) {
                 Estudiante ambito = null;
                 try {
-                    ambito = new Estudiante();
+                    //ambito = new Estudiante();
                     ambito=EstudianteImpl.ObtenerEstudianteDadoCodigo(Integer.parseInt(tcodigo.getText()));
+                    System.out.println("ESTUDIANTE: "+ambito.getCodigo()+" "+ambito.getNombre());
                     if (ambito!=null) {
                         tnombre.setText(ambito.getNombre());
                         tapellido.setText(ambito.getApellido());
@@ -145,6 +147,11 @@ public class FormOestudiante {
                         tcodsicoa.setText(Integer.toString(ambito.getCodigo_sicoa()));
                         tcodperiodo.setText(ambito.getPeriodo().getNombre());
                         tcodnivel.setText(ambito.getNivel().getNombre());
+                        Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
+                        alerta.setTitle("INFORMACION DEL SISTEMA");
+                        alerta.setHeaderText(null);
+                        alerta.setContentText("Busqueda Correcta!");
+                        alerta.showAndWait();
                     }
                 } catch (Exception e) {
                     Alert alerta = new Alert(Alert.AlertType.ERROR);
@@ -159,6 +166,7 @@ public class FormOestudiante {
             @Override
             public void handle(ActionEvent event) {
                 try {
+                    tcodigo.setText("");
                     tnombre.setText("");
                     tapellido.setText("");
                     tcedula.setText("");
